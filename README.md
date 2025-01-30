@@ -1,5 +1,22 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Tech Stack
+
+- [Bun](https://bun.sh) - The JavaScript runtime (for package management)
+- [Next.js](https://nextjs.org) - The React Framework
+- [Auth.js](https://https://authjs.dev) - Authentication
+- [TypeScript](https://www.typescriptlang.org) - The TypeScript
+- [Drizzle ORM](https://www.drizzle-orm.com) - The database ORM
+- [PostgreSQL](https://www.postgresql.org) - The database
+- [Tailwind CSS](https://tailwindcss.com) - The CSS Framework
+- [Lucide](https://www.lucide.dev) - The icon library
+- [React Icons](https://react-icons.github.io/react-icons) - The icon library (extra for brand icons)
+- [HeroUI](https://www.heroui.dev) - The UI Framework
+- [Zod](https://zod.dev) - The schema validation library
+- [Eslint](https://eslint.org) - The linter
+- [Prettier](https://prettier.io) - The code formatter
+- [Docker](https://www.docker.com) - The container runtime (for database)
+
 ## Getting Started
 
 First, run the development server:

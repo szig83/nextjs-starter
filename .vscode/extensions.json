@@ -1,0 +1,24 @@
+{
+	"recommendations": [
+		"steoates.autoimport",
+		"adpyke.codesnap",
+		"naumovs.color-highlight",
+		"Rajeshwaran.developer-theme-dark",
+		"mikestead.dotenv",
+		"dsznajder.es7-react-js-snippets",
+		"dbaeumer.vscode-eslint",
+		"GitHub.copilot",
+		"GitHub.copilot-chat",
+		"seatonjiang.gitmoji-vscode",
+		"wix.vscode-import-cost",
+		"xabikos.JavaScriptSnippets",
+		"esbenp.prettier-vscode",
+		"YoavBls.pretty-ts-errors",
+		"bradlc.vscode-tailwindcss",
+		"dbankier.vscode-quick-select"
+		//"rangav.vscode-thunder-client",
+		//"vunguyentuan.vscode-postcss",
+		//"csstools.postcss",
+		//"ms-azuretools.vscode-docker",
+	]
+}
