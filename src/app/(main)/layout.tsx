@@ -1,16 +1,18 @@
 import Link from 'next/link'
 import { Providers } from './providers'
 import UserAuthControl from '@/components/auth/UserAuthControl'
+import { auth } from '@/lib/auth'
 
-export default function MainLayout({
+export default async function MainLayout({
 	modal,
 	children,
 }: {
 	modal: React.ReactNode
 	children: React.ReactNode
 }) {
+	const session = await auth()
 	return (
-		<Providers>
+		<Providers session={session}>
 			<div className="flex h-screen flex-col">
 				<header className="flex min-h-[3rem] items-center justify-between bg-stone-800 px-7 py-2 text-stone-300">
 					<div className="flex items-center gap-3">

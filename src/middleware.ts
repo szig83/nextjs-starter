@@ -1,7 +1,10 @@
-import type { NextRequest } from 'next/server'
+import { NextRequest } from 'next/server'
 import NextAuth from 'next-auth'
 import { authConfig } from '@/lib/auth.config'
 import routeGuard from '@/lib/routeGuard'
+import { getToken } from 'next-auth/jwt'
+import { NextResponse } from 'next/server'
+import { signOut } from '@/lib/auth'
 
 const { auth } = NextAuth(authConfig)
 
@@ -15,6 +18,43 @@ const { auth } = NextAuth(authConfig)
  */
 export async function middleware(request: NextRequest) {
 	const session = await auth()
+	const token = await getToken({ req: request, secret: authConfig.secret })
+
+	//console.log('session', session)
+	console.log('middleware token', token)
+
+	if (token) {
+		try {
+			// Saját API route-on keresztül ellenőrizzük a session-t
+			const responseSessionCheck = await fetch(`http://localhost:3000/api/auth/session-check`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					userId: token.sub,
+					sessionToken: token.sessionToken,
+				}),
+			})
+
+			const data = await responseSessionCheck.json()
+
+			if (!data.exists) {
+				await apiLogout()
+				return null
+			}
+
+			/* if (!response.ok) {
+				// Ha a session nem létezik, átirányítás kijelentkezési oldalra
+				return NextResponse.redirect(new URL('/auth/signout', request.url))
+			} */
+		} catch (error) {
+			console.error('Session ellenőrzési hiba:', error)
+			//await signOut({ redirect: false })
+			await apiLogout()
+			return null
+		}
+	}
 
 	/**
 	 * Utvonal vedelem
@@ -30,4 +70,10 @@ export async function middleware(request: NextRequest) {
  */
 export const config = {
 	matcher: ['/((?!.+\\.[\\w]+$|_next).*)'],
+}
+
+const apiLogout = async (): Promise<void> => {
+	await fetch(`http://localhost:3000/api/auth/logout`, {
+		method: 'POST',
+	})
 }
