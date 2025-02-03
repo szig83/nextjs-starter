@@ -1,11 +1,11 @@
 {
-  "id": "072bc533-b21a-4736-be1d-0a31fbd72190",
+  "id": "694310db-7960-4f2d-8495-0eb2346659ff",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "auth.account": {
-      "name": "account",
+    "auth.accounts": {
+      "name": "accounts",
       "schema": "auth",
       "columns": {
         "userId": {
@@ -77,10 +77,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "account_userId_user_id_fk": {
-          "name": "account_userId_user_id_fk",
-          "tableFrom": "account",
-          "tableTo": "user",
+        "accounts_userId_users_id_fk": {
+          "name": "accounts_userId_users_id_fk",
+          "tableFrom": "accounts",
+          "tableTo": "users",
           "schemaTo": "auth",
           "columnsFrom": [
             "userId"
@@ -98,8 +98,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "auth.authenticator": {
-      "name": "authenticator",
+    "auth.authenticators": {
+      "name": "authenticators",
       "schema": "auth",
       "columns": {
         "credentialID": {
@@ -153,10 +153,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "authenticator_userId_user_id_fk": {
-          "name": "authenticator_userId_user_id_fk",
-          "tableFrom": "authenticator",
-          "tableTo": "user",
+        "authenticators_userId_users_id_fk": {
+          "name": "authenticators_userId_users_id_fk",
+          "tableFrom": "authenticators",
+          "tableTo": "users",
           "schemaTo": "auth",
           "columnsFrom": [
             "userId"
@@ -170,8 +170,8 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "authenticator_credentialID_unique": {
-          "name": "authenticator_credentialID_unique",
+        "authenticators_credentialID_unique": {
+          "name": "authenticators_credentialID_unique",
           "nullsNotDistinct": false,
           "columns": [
             "credentialID"
@@ -182,8 +182,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "auth.session": {
-      "name": "session",
+    "auth.sessions": {
+      "name": "sessions",
       "schema": "auth",
       "columns": {
         "sessionToken": {
@@ -207,10 +207,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "session_userId_user_id_fk": {
-          "name": "session_userId_user_id_fk",
-          "tableFrom": "session",
-          "tableTo": "user",
+        "sessions_userId_users_id_fk": {
+          "name": "sessions_userId_users_id_fk",
+          "tableFrom": "sessions",
+          "tableTo": "users",
           "schemaTo": "auth",
           "columnsFrom": [
             "userId"
@@ -228,8 +228,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "auth.user": {
-      "name": "user",
+    "auth.users": {
+      "name": "users",
       "schema": "auth",
       "columns": {
         "id": {
@@ -273,8 +273,8 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "user_email_unique": {
-          "name": "user_email_unique",
+        "users_email_unique": {
+          "name": "users_email_unique",
           "nullsNotDistinct": false,
           "columns": [
             "email"
@@ -285,8 +285,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "auth.verificationToken": {
-      "name": "verificationToken",
+    "auth.verification_tokens": {
+      "name": "verification_tokens",
       "schema": "auth",
       "columns": {
         "identifier": {

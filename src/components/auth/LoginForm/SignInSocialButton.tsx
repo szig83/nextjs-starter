@@ -1,5 +1,5 @@
 import { signInWithSocial } from '@/actions/auth-actions'
-import { capitalizeFirstLetter } from '@/lib/common-utils'
+import { capitalizeFirstLetter } from '@/lib/utils/common'
 import { Button } from '@heroui/react'
 
 export default function SignInSocialButton({

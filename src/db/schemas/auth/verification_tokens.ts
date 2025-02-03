@@ -2,7 +2,7 @@ import { timestamp, text, primaryKey } from 'drizzle-orm/pg-core'
 import { authSchema as schema } from './_schema'
 
 export const verificationTokens = schema.table(
-	'verificationToken',
+	'verification_tokens',
 	{
 		identifier: text('identifier').notNull(),
 		token: text('token').notNull(),

@@ -1,9 +1,9 @@
 import { boolean, text, primaryKey, integer, uuid } from 'drizzle-orm/pg-core'
 import { authSchema as schema } from './_schema'
-import { users } from './user'
+import { users } from './users'
 
 export const authenticators = schema.table(
-	'authenticator',
+	'authenticators',
 	{
 		credentialID: text('credentialID').notNull().unique(),
 		userId: uuid('userId')

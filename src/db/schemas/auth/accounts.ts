@@ -1,10 +1,10 @@
 import type { AdapterAccountType } from 'next-auth/adapters'
 import { text, primaryKey, integer, uuid } from 'drizzle-orm/pg-core'
 import { authSchema as schema } from './_schema'
-import { users } from './user'
+import { users } from './users'
 
 export const accounts = schema.table(
-	'account',
+	'accounts',
 	{
 		userId: uuid('userId')
 			.notNull()
