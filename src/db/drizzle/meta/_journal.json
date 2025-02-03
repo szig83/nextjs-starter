@@ -8,6 +8,20 @@
       "when": 1738608389649,
       "tag": "0000_green_mephisto",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1738614004998,
+      "tag": "0001_right_kingpin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738614522330,
+      "tag": "0002_gray_doorman",
+      "breakpoints": true
     }
   ]
 }
